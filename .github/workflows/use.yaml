@@ -12,7 +12,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
       
-      - name: Marp Build 
+      - name: Use practice image
         uses: docker://abap/practice:latest
         with:
           args: tmp.txt tmp2.txt
