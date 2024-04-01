@@ -1,0 +1,27 @@
+name: Build and Upload
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build project
+        run: ./build.sh
+
+      - name: Login to GHCR
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+        
+      - name: Tag and push image
+        run: |
+          docker build -t ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:${{ github.sha }} .
+          docker push ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:${{ github.sha }}
