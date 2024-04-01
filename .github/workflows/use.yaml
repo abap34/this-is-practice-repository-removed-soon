@@ -12,10 +12,13 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
       
+      - name: Setup
+        run: echo "" > out.txt
+
       - name: Use practice image
         uses: docker://abap/practice:latest
         with:
-          args: tmp.txt tmp2.txt
+          args: --mount type=bind,source=$(pwd)/tmp.txt,target=/app/tmp.txt --mount type=bind,source=$(pwd)/out.txt,target=/app/out.txt tmp.txt out.txt
   
       - name: Commit and Push
         run: |
