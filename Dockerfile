@@ -1,8 +1,12 @@
-# Use a lightweight base image
 FROM alpine:latest
+
+# setup g++
+RUN apk add --no-cache g++
 
 COPY . /app
 
-RUN sh /app/build.sh
+WORKDIR /app
+
+RUN sh build.sh
 
 ENTRYPOINT [ "/app/build/almo" ]
