@@ -9,4 +9,4 @@ WORKDIR /app
 
 RUN sh build.sh
 
-ENTRYPOINT [ "/app/build/almo" ]
+ENTRYPOINT [ "docker-entrypoint.sh" ]
