@@ -4,8 +4,6 @@ RUN apk add --no-cache g++
 
 COPY . /app
 
-WORKDIR /app
-
-RUN sh build.sh
+RUN sh /app/build.sh
 
 ENTRYPOINT [ "./docker-entrypoint.sh" ]
