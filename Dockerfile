@@ -9,4 +9,4 @@ WORKDIR /app
 
 RUN sh build.sh
 
-ENTRYPOINT [ "docker-entrypoint.sh" ]
+ENTRYPOINT [ "/app/docker-entrypoint.sh" ]
