@@ -1,2 +1,2 @@
-mkdir -p /app/build
-g++ --std=c++20 -o /app/build/main main.cpp
+mkdir -p build
+g++ --std=c++20 -o build/main main.cpp
