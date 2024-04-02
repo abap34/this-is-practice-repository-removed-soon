@@ -29,8 +29,8 @@ jobs:
         with:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: build/main
-          asset_name: ${{ matrix.os }}.zip
-          asset_content_type: application/zip
+          asset_name: ${{ matrix.os }}
+          asset_content_type: application/octet-stream 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
