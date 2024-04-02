@@ -31,4 +31,6 @@ jobs:
           asset_path: build/main
           asset_name: ${{ matrix.os }}.zip
           asset_content_type: application/zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
