@@ -12,6 +12,9 @@ jobs:
     - name: Set up Meson
       run: sudo apt-get install -y meson ninja-build
 
+    - name: Install dependencies
+      run: bash install.sh
+
     - name: Build
       run: meson setup builddir && meson compile -C builddir
 
