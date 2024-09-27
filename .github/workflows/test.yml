@@ -13,7 +13,7 @@ jobs:
       run: sudo apt-get install -y meson ninja-build
 
     - name: Build
-        run: meson setup builddir && meson compile -C builddir
+      run: meson setup builddir && meson compile -C builddir
 
     - name: Test
-        run: cd builddir && ./test_sumsum
+      run: cd builddir && ./test_sumsum
