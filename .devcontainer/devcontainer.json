@@ -1,0 +1,5 @@
+// almo devcontainer.json
+{
+  "name": "almo",
+  "dockerFile": "Dockerfile"
+}
