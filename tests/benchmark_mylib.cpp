@@ -1,5 +1,5 @@
 #include <benchmark/benchmark.h>
-#include "mylib.hpp"
+#include "src/mylib.hpp"
 
 static void BM_Sum(benchmark::State& state) {
     for (auto _ : state) {
