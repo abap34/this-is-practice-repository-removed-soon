@@ -30,5 +30,3 @@ benchmark_exe = executable('benchmark_sumsum', bench_src,
   dependencies: [gbenchmark]
 )
 
-test('benchmark_sumsum', benchmark_exe)
-
