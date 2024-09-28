@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727537102779,
+  "lastUpdate": 1727537554153,
   "repoUrl": "https://github.com/abap34/this-is-practice-repository-removed-soon",
   "entries": {
     "Benchmark": [
@@ -362,6 +362,36 @@ window.BENCHMARK_DATA = {
             "value": 50094535.35079956,
             "unit": "ns/iter",
             "extra": "iterations: 100\ncpu: 18419.17 ns\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "abap0002@gmail.com",
+            "name": "Yuchi Yamaguchi",
+            "username": "abap34"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "f02e1dc19449b076a2a162fa0d6bfe9511054988",
+          "message": "Merge pull request #7 from abap34/codecov\n\nup",
+          "timestamp": "2024-09-29T00:31:37+09:00",
+          "tree_id": "5e3757f739f09d48d230cdad698c30cf1275e64f",
+          "url": "https://github.com/abap34/this-is-practice-repository-removed-soon/commit/f02e1dc19449b076a2a162fa0d6bfe9511054988"
+        },
+        "date": 1727537553851,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "BM_Sum",
+            "value": 50095088.481903076,
+            "unit": "ns/iter",
+            "extra": "iterations: 100\ncpu: 18921.79 ns\nthreads: 1"
           }
         ]
       }
