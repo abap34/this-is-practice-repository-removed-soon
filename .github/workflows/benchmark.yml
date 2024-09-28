@@ -1,0 +1,31 @@
+name: Benchmark
+
+on: [pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Meson
+      run: sudo apt-get install -y meson ninja-build
+
+    - name: Install dependencies
+      run: bash install.sh
+    
+    - name: Build
+      run: meson setup builddir && meson compile -C builddir
+
+    - name: Run benchmark
+      run: cd builddir && ./benchmark_sumsum  --benchmark_format=json | tee benchmark_result.json
+
+    - name: Store benchmark result
+      uses: benchmark-action/github-action-benchmark@v1
+      with:
+        tool: 'googlecpp'
+        output-file-path: benchmark_result.json
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        comment-on-alert: true
+        summary-always: true
