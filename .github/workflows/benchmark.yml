@@ -1,6 +1,6 @@
 name: Benchmark
 
-on: [pull_request]
+on: [push, pull_request]
 
 jobs:
   test:
@@ -30,3 +30,5 @@ jobs:
         comment-on-alert: true
         summary-always: true
         fail-on-alert: true
+        auto-push: true
+        comment-always: true

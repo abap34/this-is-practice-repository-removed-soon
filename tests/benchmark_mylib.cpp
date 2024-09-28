@@ -3,7 +3,7 @@
 
 static void BM_Sum(benchmark::State& state) {
     for (auto _ : state) {
-        sum(1, 2, 3);
+        try_to_sum(1, 2, 3);
     }
 }
 

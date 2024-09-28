@@ -2,7 +2,7 @@
 #include "src/mylib.hpp"
 
 TEST(MyLibTest, SumTest) {
-    EXPECT_EQ(sum(1, 2, 3), 6);
+    EXPECT_EQ(try_to_sum(1, 2, 3), 6);
 }
 
 int main(int argc, char **argv) {
