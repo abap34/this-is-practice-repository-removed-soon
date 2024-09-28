@@ -1,0 +1,25 @@
+name: Codecov
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Meson
+      run: sudo apt-get install -y meson ninja-build
+
+    - name: Install dependencies
+      run: bash install.sh
+    
+    - name: Build
+      run: meson setup builddir_cov --buildtype=debugoptimized -Db_coverage=true && meson compile -C builddir_cov
+
+    - name: Test
+      run: cd builddir_cov && ./test_sumsum
+
+    - name: Upload coverage to Codecov
+      run: bash <(curl -s https://codecov.io/bash)
