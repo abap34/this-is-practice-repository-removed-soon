@@ -10,7 +10,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Set up Meson
-      run: sudo apt-get install -y meson ninja-build
+      run: sudo apt-get install -y meson ninja-build lcov gcovr 
 
     - name: Install dependencies
       run: bash install.sh
