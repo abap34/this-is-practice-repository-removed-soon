@@ -3,7 +3,7 @@ name: Codecov
 on: [push, pull_request]
 
 jobs:
-  test:
+  upload:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,5 +21,11 @@ jobs:
     - name: Test
       run: cd builddir_cov && ./test_sumsum
 
-    - name: Upload coverage to Codecov
-      run: bash <(curl -s https://codecov.io/bash)
+    - name: Export XML
+      run: cd builddir_cov && ninja coverage-xml
+    
+    - name: Upload coverage
+      uses: codecov/codecov-action@v4
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        files: builddir_cov/meson-logs/coverage.xml
