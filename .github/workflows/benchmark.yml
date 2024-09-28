@@ -21,6 +21,15 @@ jobs:
     - name: Run benchmark
       run: ./benchmark_sumsum --benchmark_format=json | tee benchmark_result.json
 
+    - name: pwd
+      run: pwd
+    
+    - name: Debug
+      run: ls -l
+
+    - name: Debug build
+      run: ls -l builddir
+
     - name: Store benchmark result
       uses: benchmark-action/github-action-benchmark@v1
       with:
