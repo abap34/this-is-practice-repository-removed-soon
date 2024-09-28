@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727535248323,
+  "lastUpdate": 1727536812596,
   "repoUrl": "https://github.com/abap34/this-is-practice-repository-removed-soon",
   "entries": {
     "Benchmark": [
@@ -250,6 +250,32 @@ window.BENCHMARK_DATA = {
             "value": 50095384.12094116,
             "unit": "ns/iter",
             "extra": "iterations: 100\ncpu: 18680.81000000001 ns\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "abap34",
+            "username": "abap34"
+          },
+          "committer": {
+            "name": "abap34",
+            "username": "abap34"
+          },
+          "id": "209e18899f538d1c6110e04110d140fffe632381",
+          "message": "up",
+          "timestamp": "2024-09-28T14:53:11Z",
+          "url": "https://github.com/abap34/this-is-practice-repository-removed-soon/pull/7/commits/209e18899f538d1c6110e04110d140fffe632381"
+        },
+        "date": 1727536811740,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "BM_Sum",
+            "value": 50095970.63064575,
+            "unit": "ns/iter",
+            "extra": "iterations: 100\ncpu: 21203.11 ns\nthreads: 1"
           }
         ]
       }
