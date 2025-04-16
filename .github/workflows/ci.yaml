@@ -1,0 +1,32 @@
+name: Run Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Racket
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y racket
+
+      - name: Set up raco
+        run: |
+          sudo apt-get install -y raco
+
+      - name: Install dependencies
+        run: |
+          sudo raco pkg install --auto --no-docs rebellion  
+
+      - name: Run tests
+        run: |
+          sudo make test
