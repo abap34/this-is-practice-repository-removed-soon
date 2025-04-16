@@ -19,14 +19,14 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y racket
 
-      - name: Set up raco
-        run: |
-          sudo apt-get install -y raco
-
       - name: Install dependencies
         run: |
-          sudo raco pkg install --auto --no-docs rebellion  
+          raco pkg install --auto --no-docs rebellion
+
+      - name: Setup Racket libraries
+        run: |
+          raco setup
 
       - name: Run tests
         run: |
-          sudo make test
+          make test
