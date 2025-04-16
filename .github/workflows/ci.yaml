@@ -21,12 +21,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          raco pkg install --auto --no-docs rebellion
+          sudo raco pkg install --auto --no-docs rebellion
 
       - name: Setup Racket libraries
         run: |
-          raco setup
+          sudo raco setup
 
       - name: Run tests
         run: |
-          make test
+          sudo make test
